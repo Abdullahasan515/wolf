@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700;800,900&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.image{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+}
+.image:hover{
+    filter: blur(0);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 20px 0;
+  }
+  .headerimage {
+    max-height: 50px;
+    margin-right: 10px;
+  }
+.card{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    /* background: #333; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: 0.5s;
+}
+.card:hover{
+    width: 300px;
+    transition-delay: 0.5s;
+}
+.card .circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /* border: 8px solid var(--clr);
+    transition: 0.5s, background 0.5s; */
+    transition-delay: 0.75s,1s;
+    filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+span{
+    font-size: 80px;
+    font-family: sans-serif;
+    font-weight: 1000;
+    position: relative;
+    align-content: flex-end;
+    align-items: center;
+    color: #fff;
+    -webkit-text-stroke: 3px black;
+    z-index: 5;
+}
+span::before{
+    position: absolute;
+    content: "ذيب";
+    color: rgb(240, 25, 25);
+    animation: filling 3s linear infinite ;
+    /* border-left: 3px solid rgb(255, 255, 255); */
+    overflow: hidden;
+}
+@keyframes filling {
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+.card:hover .circle::before{
+    width: 100%;
+    transition-delay: 0.5s;
+    height: 100%;
+    /* border-radius: 20px;
+    background: var(--clr); */
+}
+.card .circle .logo{
+    position: relative;
+    top: 8px;
+    height: 350px;
+    width: 390px;
+    left: 10px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    border-radius: 50%;border: 8px solid var(--clr);
+}
+.card:hover .circle .logo{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.card .product_img{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%,-50%) scale(0) rotate(315deg);
+    height: 300px;
+    transition: 0.5s ease-in-out;
+}
+.card:hover .product_img{
+    transition-delay: 0.75s;
+    transform: translate(-50%,-50%) scale(1) rotate(15deg);
+    top: 45%;
+    left: 75%;
+    height: 500px;
+    border-radius: 50%;
+}
+.card .content{
+    position:absolute;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.card:hover .content{
+    transition-delay: 0.75s;
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+}
+.card .content h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2.4em;
+    line-height: 1em;
+}
+.card .content p{
+    color: #fff;
+}
+.card .content a{
+    position: relative;
+    color: #111;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+}
